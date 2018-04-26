@@ -66,7 +66,7 @@ app.post('/login', function (req, res) {
         }).then((result) => {
             return new Promise(function(resolve, reject) {
                 result.push(username);
-                client.set('logged_in_users', JSON.stringify(result));
+                client.set('logged_in_users', JSON.stringify([...new Set(result)]));
                 resolve('success'); 
             });
             

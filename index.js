@@ -24,7 +24,7 @@ client.on('connect', function() {
 const users = [
     {
         user_name:'Alex',
-        email: 'a'
+        email: 'alex@gmail.com'
     },
     {
         user_name:'Smith',

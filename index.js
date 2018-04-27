@@ -98,7 +98,7 @@ app.post('/messages', function (req, res) {
     let message = req.body.message;
     messages.push({from, message, to});
     filteredMessages = messages.filter((data) => {return data.from == from && data.to == to});
-    client.set(from+'_'+to, JSON.stringify(messages));
+    client.set(from+'_'+to, JSON.stringify(filteredMessages));
     res.send({
         'status': 'OK',
         messages,

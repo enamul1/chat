@@ -38,14 +38,15 @@ $(document).ready(function(){
         let user2 = $("input[name=currentUser]").val();
         $('.message-form').show();
         $.get('/messages?user1='+user1+'&user2='+user2, function (response) {
+            let html = '';
             if (response.length > 0) {
-                var message_count = response.length;
-                var html = '';
-                for (var x = 0; x < message_count; x++) {
+                let message_count = response.length;
+                console.log(response);
+                for (let x = 0; x < message_count; x++) {
                     html += "<div class='msg'><div class='user'>" + response[x]['from'] + "</div><div class='txt'>" + response[x]['message'] + "</div></div>";
                 }
-                $('.messages').html(html);
             }
+            $('.messages').html(html);
         });
     });
 
